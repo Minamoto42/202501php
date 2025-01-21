@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js function</title>
+</head>
+
+<body>
+    <button id="orderButton" style="width: 200px; height: 50px; background-color: rgb(106, 120, 186);">下单</button> 
+
+    <script>
+    /**
+     * Adds two numbers together.
+     * @param {number} a - The first number.
+     * @param {number} b - The second number.
+     * @returns {number} - The sum of a and b.
+     */
+    function add(a, b) {
+        return a + b;
+    }
+
+   
+    let productList = [
+        {
+            name: "篮球",
+            price: 5
+        },
+        {
+            name: "足球",
+            price: 3
+        },
+        {
+            name: "橄榄球",
+            price: 4
+        }
+    ];
+
+     /**
+    * @param {Array} productList
+    */
+
+    function order(productList) {
+        return false;
+    }
+
+    let orderButton = document.getElementById('orderButton');
+        orderButton.addEventListener('click', function () {
+            let orderResult = order(productList);
+            if (orderResult) {
+                alert('下单成功');
+            } else {
+                alert('下单失败');
+            }
+        });
+
+     let sum = add(100, 20);
+        console.log(sum);   
+
+    let multiply = function (a, b) {
+        return a * b;
+    }
+    console.log(multiply(99, 20));
+
+    let divide = (a, b) => a / b;
+    console.log(divide(89, 2))
+
+    function sayHello(name = "朋友") {
+            console.log('你好, ' + name + '!');
+        }
+        sayHello(); 
+        sayHello('乌萨奇'); 
+
+      function sumAll(...args) {
+        let sum = 0;
+        for (let arg of args) {  
+            sum += arg;
+        }
+        return sum;
+    }
+    console.log(sumAll(1, 2, 3, 4));
+
+    function display({ name, age }) {
+            console.log("姓名: " + name);
+            console.log("年龄: " + age);
+        }
+
+        let person = {
+            name: "chiikawa",
+            age: 3
+        };
+        display(person);
+
+    function square(num) {
+    
+    }
+    console.log(square(10));
+    let justTestStr = "just test";
+    console.log(justTestStr.length);
+
+    // function square(num) {
+    //     return num * num;
+    // }
+    // console.log(square(10));
+    // let justTestStr = "just test";
+    // console.log(justTestStr.length);
+
+    function sumArray(arr) {
+        if (arr.length === 0) {
+            return 0;
+        }
+    return arr[0] + sumArray(arr.slice(1));
+    }
+    const numbers = [9, 8, 7, 6, 5, 4 ,3 ,2 ,1];
+    console.log(sumArray(numbers));
+
+    function outer() {
+            let count = 0;
+            return function inner() {
+                count++;
+                console.log(count);
+            };
+        }
+
+        let counter = outer();
+        counter(); 
+        counter(); 
+
+        console.log(counter);
+        console.log(count);  
+
+</script>
+
+    </script>
+</body>

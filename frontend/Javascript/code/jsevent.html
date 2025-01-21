@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js event</title>
+    <style>
+        #btn {
+            width: 300px;
+            height: 400px;
+            background-color: darkorange;
+        }
+
+        .event-object-text{
+            color: burlywood
+            text-decoration: none;
+        }
+
+        .parent {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(13, 166, 217);
+            padding: 20px;
+        }
+
+        .child {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(184, 29, 155);
+        }
+    </style>   
+</head>        
+
+<body>
+    <h2>事件监听</h2>
+    <button id="btn">戳</button>
+    <h2>按下任意按键</h2>
+    <p id="output">这里会显示键值</p>
+    <h2>表单事件</h2>
+    <from action="" method="post" id="form-events">
+        <label for="name">姓名： </label>
+        <input type="text" name="name" id="name">
+        <input type="submit" value="提交">
+    </from>
+
+    <hr>
+    <h2>事件对象</h2>
+    <a class="event-object-text" href="https://www.warhammer.com">Warhammer</a>
+
+    <hr>
+    <h2>事件冒泡</h2>
+    <div class="parent" onclick="alert('parent Div Clicked!')">
+        <div class="child" onclick="childClick(event)">Click Me</div>
+    </div>
+
+    <script>
+        var btn = document.getElementById("btn");
+        console.log(document);
+        console.log(btn);
+        btn.addEventListener("click", function(){
+            console.log("单机按钮");
+        });
+        btn.addEventListener('dblclick', function () {
+            console.log("双击按钮");
+        });
+        btn.addEventListener('mouseover', function () {
+            btn.style.backgroundColor = "blue";
+        });
+        btn.addEventListener('mouseout', function () {
+            btn.style.backgroundColor ="green";
+        });
+
+        function clickHandler() {
+            console.log('移除事件监听');
+        }
+        btn.addEventListener('click', clickHandler);
+
+        let link = document.querySelector('a');
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            console.log('点击了链接');
+            console.log(event);
+            console.log(event.type);
+            console.log(event.target);
+            console.log(event.currentTarget);
+        });
+
+        document.addEventListener('keydown', function (event) {
+
+            if (event.code === 'Space') {
+                console.log('按下了空格键');
+            }
+            let key = event.key;
+            let keycode = event.code;
+            document.getElementById("output").textContent = `按下了空格：${key} (Code: ${keycode})`;
+        });   
+
+        window.addEventListener('resize', function () {
+            console.log('窗口大小改变');
+        });
+        window.addEventListener('load', function () {
+            console.log('页面加载完成');
+        });
+
+        let form = document.getElementById('form-events');
+        form.addEventListener('submit', function (event) {
+            // 阻止表单提交
+            event.preventDefault();
+            console.log('提交表格');
+        });
+
+        form.addEventListener('change', function () {
+            console.log('表单内容改变');
+        });
+
+        let name = document.getElementById('name');
+        name.addEventListener('focus', function () {
+            console.log('输入框获取焦点');
+        });
+
+        name.addEventListener('blur', function () {
+            console.log('输入框失去焦点');
+        });
+
+        function childClick(event) {
+            alert('Child Div Clicked!');
+            event.stopPropagation();
+        }
+
+    </script>
+</body>
