@@ -190,4 +190,101 @@ echo rand() . "<br>";
 echo round(3.14159, 2) . "<br>";
 
 echo sqrt(144) . "<br>";
+
+
+$decimalString = "456.78";
+var_dump($decimalString);
+echo "<br>";
+$integerValue = intval($decimalString);
+var_dump($integerValue);
+echo "<br>";
+$integerCast = (int)$decimalString;
+var_dump($integerCast);
+echo "<br>";
+
+$floatValue = floatval($decimalString);
+var_dump($floatValue);
+echo "<br>";
+
+$isActivated = 1;
+$isDeactivated = 0;
+$booleanValue = boolval($isActivated);
+var_dump($booleanValue);
+echo "<br>";
+
+$person = [
+    "username" => "Alice",
+    "years" => 25,
+    "isSuperUser" => false
+];
+$personSerialized = serialize($person);
+var_dump($personSerialized);
+echo "<br>";
+
+$personDeserialized = unserialize($personSerialized);
+var_dump($personDeserialized);
+echo "<br>";
+
+$website = "https://example.com?query=PHP is great";
+$encodedURL = urlencode($website);
+var_dump($encodedURL);
+echo "<br>";
+
+$decodedURL = urldecode($encodedURL);
+var_dump($decodedURL);
+echo "<br>";
+
+$searchURL = "https://example.com?search=PHP&category=coding&lang=en";
+$queryParams = parse_url($searchURL, PHP_URL_QUERY);
+var_dump($queryParams);
+echo "<br>";
+
+$requestData = [
+    "message" => "Hello World",
+    "filters" => ["recent", "popular"]
+];
+$requestQuery = http_build_query($requestData);
+var_dump($requestQuery);
+echo "<br>";
+
+$numArray = [5, 10, 15];
+$isNumArray = is_array($numArray);
+var_dump($isNumArray);
+echo "<br>";
+echo "<hr>";
+
+$textVar1 = "";
+$textVar2 = "world";
+$numVar = 42;
+var_dump(empty($textVar1));
+echo "<br>";
+var_dump(empty($textVar2));
+echo "<br>";
+var_dump(empty($numVar));
+echo "<br>";
+echo "<hr>";
+
+$nullVar = null;
+var_dump(isset($textVar1));
+echo "<br>";
+var_dump(isset($textVar2));
+echo "<br>";
+var_dump(isset($numVar));
+echo "<br>";
+var_dump(isset($nullVar));
+echo "<br>";
+
+class City
+{
+    public string $cityName;
+}
+
+$city = new City();
+var_dump(isset($city->cityName));
+echo "<br>";
+echo "<hr>";
+
+var_dump(is_null($nullVar));
+echo "<br>";
+
 ?>
