@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap Example</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="#" class="navbar-brand">乌萨其的主页</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exampleNav"
+            aria-controls="exampleNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="exampleNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">除草 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">吃饭</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">补丁旋转~</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="card col-md-4" style="width: 18rem;">
+            <img src="D:\phpstudy_pro\WWW\202501PHP\frontend\css\code\Usagi_main.webp" class="card-img-top mt-3" alt="Placeholder Image">
+            <div class="card-body">
+                <h5 class="card-title">乌萨其</h5>
+                <p class="card-text">ura</p>
+                <a href="#" class="btn btn-info">ha？</a>
+            </div>
+        </div>
+        <div class="card col-md-4" style="width: 18rem;">
+            <img src="D:\phpstudy_pro\WWW\202501PHP\frontend\css\code\Usagi_main.webp" class="card-img-top mt-3" alt="Placeholder Image">
+            <div class="card-body">
+                <h5 class="card-title">乌萨其</h5>
+                <p class="card-text">ya~~~~~ha</p>
+                <a href="#" class="btn btn-info">ha~~~？</a>
+            </div>
+        </div>
+        <div class="card col-md-4" style="width: 18rem;">
+            <img src="D:\phpstudy_pro\WWW\202501PHP\frontend\css\code\Usagi_main.webp" class="card-img-top mt-3" alt="Placeholder Image">
+            <div class="card-body">
+                <h5 class="card-title">乌萨其</h5>
+                <p class="card-text">uuuuuuuuura ya~~~~~~~~ha</p>
+                <a href="#" class="btn btn-info">ha！！！！</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-5 text-center">
+        <button type="button" class="btn btn-warning">黄的</button>
+        <button type="button" class="btn btn-success">绿的</button>
+        <button type="button" class="btn btn-danger">红的</button>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-3 bg-light text-center p-3">不知道写啥</div>
+        <div class="col-md-3 bg-secondary text-center text-white p-3">巧了 我也是</div>
+        <div class="col-md-3 bg-primary text-center text-white p-3">随便写点</div>
+        <div class="col-md-3 bg-dark text-center text-white p-3">就这吧</div>
+    </div>
+
+    <nav aria-label="Pagination Example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link" href="#">First</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Last</a></li>
+        </ul>
+    </nav>
+
+    <button type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target="#newModal">
+        别点
+    </button>
+
+    <div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newModalLabel">哈？</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    看完了？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">继续看</button>
+                    <button type="button" class="btn btn-primary">不看了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
